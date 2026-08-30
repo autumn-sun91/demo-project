@@ -1,3 +1,10 @@
+#!/bin/bash
+# .claude/scripts/reduce-prompts.sh
+# Generate settings to reduce permission prompts for frequent read-only operations
+
+# Create or update .claude/settings.json with allowlist for common read-only tasks
+mkdir -p .claude
+cat > .claude/settings.json << 'EOF'
 {
   "permissions": {
     "allow": [
@@ -66,3 +73,7 @@
     ]
   }
 }
+EOF
+
+echo "Permission settings updated to reduce prompts for frequent read-only operations."
+echo "Updated file: .claude/settings.json"
